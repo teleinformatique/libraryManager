@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibraryManagement.Data.Interfaces
 {
-    public interface IAuthorRepository
+    public interface IAuthorRepository: IRepository<Author>
     {
         IEnumerable<Author> GetAllWithBooks();
 
