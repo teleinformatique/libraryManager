@@ -9,7 +9,7 @@
         public int AuthorID { get; set; }
 
         public virtual Customer Borrower { get; set; }
-        public int CustomerID { get; set; }
+        public int BorrowerID { get; set; }
 
     }
 }
