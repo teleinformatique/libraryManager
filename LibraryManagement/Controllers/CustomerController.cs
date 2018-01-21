@@ -20,6 +20,7 @@ namespace LibraryManagement.Controllers
             _bookRepository = bookRepository;
         }
 
+        [Route("Customer")]
         public IActionResult List()
         {
             var customerVM = new List<CustomerViewModel>();
@@ -37,7 +38,7 @@ namespace LibraryManagement.Controllers
                     Customer = cu,
                     BookCount = _bookRepository.Count(x => x.BorrowerID == cu.CustomerID)
                 });
-            }
+            }   
 
             return View(customerVM);
         }

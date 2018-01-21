@@ -1,0 +1,33 @@
+﻿@using LibraryManagement.ViewModel;
+@model IEnumerable<CustomerViewModel>
+@{
+    ViewData["Title"] = "List";
+}
+
+<a asp-controller="Customer" asp-action="Create" class="btn btn-success pull-right">Create a new customer</a>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Borrower count</td>
+            <td>Edit</td>
+            <td>Delete</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customerVM in Model)
+        {
+        <tr>
+            <td>@customerVM.Customer.CustomerID</td>
+            <td>@customerVM.Customer.Name</td>
+            <td>@customerVM.BookCount</td>
+            <td><a asp-controller="Customer" asp-action="Edit" asp-route-id="@customerVM.Customer.CustomerID">Edit</a></td>
+            <td><a asp-controller="Customer" asp-action="Delete" asp-route-id="@customerVM.Customer.CustomerID">Delete</a></td>
+        </tr>
+        }
+        
+    </tbody>
+
+</table>
+
