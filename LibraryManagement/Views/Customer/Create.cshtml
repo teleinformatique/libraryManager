@@ -1,0 +1,14 @@
+﻿@using LibraryManagement.Data.Model;
+@model Customer
+
+<form asp-controller="Customer" asp-action="Create" method="post">
+    <div class="input-group">
+        <label asp-for="Name">Name</label>
+        <input type="text" class="form-control" placeholder="Name" asp-for="Name">
+    </div>
+    <div class="input-group">
+        <input type="submit" class="form-control" value="Create">
+    </div>
+</form>
+
+<a asp-action="List">Return</a>

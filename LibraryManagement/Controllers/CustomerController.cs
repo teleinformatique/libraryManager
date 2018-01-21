@@ -1,4 +1,5 @@
 ﻿using LibraryManagement.Data.Interfaces;
+using LibraryManagement.Data.Model;
 using LibraryManagement.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -41,6 +42,43 @@ namespace LibraryManagement.Controllers
             }   
 
             return View(customerVM);
+        }
+
+
+        public IActionResult Delete(int id)
+        {
+            var customer = _customerRepository.GetById(id);
+            _customerRepository.Delete(customer);
+
+            return RedirectToAction("List");
+
+        }
+
+        [HttpGet]
+        public IActionResult Create() => View();
+        
+        [HttpPost]
+        public IActionResult Create(Customer customer)
+        {
+            _customerRepository.Create(customer);
+
+            return RedirectToAction("List");
+        }
+
+        [HttpGet]
+        public IActionResult Update(int id)
+        {
+            var customer = _customerRepository.GetById(id);
+
+            return View(customer);
+        }
+        
+        [HttpPost]
+        public IActionResult Update(Customer customer)
+        {
+            _customerRepository.Update(customer);
+
+            return RedirectToAction("List");
         }
 
     }

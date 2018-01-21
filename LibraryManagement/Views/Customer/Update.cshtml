@@ -1,0 +1,16 @@
+﻿@using LibraryManagement.Data.Model;
+@model Customer
+
+<form asp-controller="Customer" asp-action="Update" method="post">
+    <h3>Edit @Model.Name</h3>
+    @Html.HiddenFor(m => Model.CustomerID)
+    <div class="input-group">
+        <label asp-for="Name">Name</label>
+        <input type="text" class="form-control" placeholder="Name" asp-for="Name">
+    </div>
+    <div class="input-group">
+        <input type="submit" class="form-control" value="Update">
+    </div>
+</form>
+
+<a asp-action="List">Return</a>

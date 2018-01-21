@@ -22,7 +22,7 @@
             <td>@customerVM.Customer.CustomerID</td>
             <td>@customerVM.Customer.Name</td>
             <td>@customerVM.BookCount</td>
-            <td><a asp-controller="Customer" asp-action="Edit" asp-route-id="@customerVM.Customer.CustomerID">Edit</a></td>
+            <td><a asp-controller="Customer" asp-action="Update" asp-route-id="@customerVM.Customer.CustomerID">Edit</a></td>
             <td><a asp-controller="Customer" asp-action="Delete" asp-route-id="@customerVM.Customer.CustomerID">Delete</a></td>
         </tr>
         }
